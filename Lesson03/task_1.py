@@ -1,14 +1,17 @@
 # 1.    Реализовать функцию, принимающую два числа (позиционные аргументы) и выполняющую их деление.
 #       Числа запрашивать у пользователя, предусмотреть обработку ситуации деления на ноль.
 
-def func_div():
-    number_1 = float(input("Введите первое число: "))
-    number_2 = float(input("Введите второе число: "))
+def div(*args):
     try:
-
+        arg1 = int(input("Input dividend "))
+        arg2 = int(input("Input divider "))
+        res = arg1 / arg2
+    except ValueError:
+        return 'Value error'
     except ZeroDivisionError:
-        return
-    return number_1 / number_2
+        return "Wrong devider! You can't use zero as a devider"
+
+    return res
 
 
-print(func_div())
+print(f'result  {div()}')
